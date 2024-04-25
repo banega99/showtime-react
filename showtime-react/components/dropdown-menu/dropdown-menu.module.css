@@ -1,0 +1,80 @@
+.dropdown {
+  /* display: flex; */
+  position: relative;
+}
+
+.link {
+}
+
+.dropdown > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e50914;
+}
+
+.dropdown > a::after {
+  content: " ";
+  width: 25px;
+  height: 25px;
+  background-image: url("../../assets/images/noun-drop-down-2284624.svg");
+}
+
+.dropdown ul {
+  visibility: collapse;
+  position: absolute;
+  left: -50px;
+  background-color: black;
+  height: 0;
+  transition: all 0.3s;
+  width: fit-content;
+  z-index: 1500;
+}
+
+.dropdown li {
+  display: none;
+  align-items: center;
+  visibility: collapse;
+  list-style: none;
+  color: #808080;
+  height: 0;
+  transition: all 0.3s;
+}
+
+.dropdown ul li a {
+  color: #808080 !important;
+}
+
+.dropdown li:hover {
+  cursor: pointer;
+  background-color: var(--red);
+}
+
+.dropdown .show {
+  visibility: visible;
+  height: 200px;
+  overflow-y: auto;
+}
+
+.dropdown .show li {
+  display: flex;
+  visibility: visible;
+  height: 10px;
+  padding: 12px;
+  /* width: 100%; */
+}
+.dropdown ul::-webkit-scrollbar {
+  width: 1.5px;
+}
+
+/* Track */
+.dropdown ul::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  /* border-radius: 5px; */
+}
+
+/* Handle */
+.dropdown ul::-webkit-scrollbar-thumb {
+  background: #e50914;
+  /* border-radius: 5px; */
+}

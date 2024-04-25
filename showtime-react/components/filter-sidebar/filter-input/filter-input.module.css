@@ -1,0 +1,17 @@
+.input {
+  display: flex;
+  gap: 5px;
+}
+
+.input:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.input input:hover {
+  cursor: pointer;
+}
+
+.input label:hover {
+  cursor: pointer;
+}

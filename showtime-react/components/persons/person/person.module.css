@@ -1,0 +1,57 @@
+.actor {
+  display: flex;
+  flex-direction: row;
+  transition: all 0.4s;
+  width: fit-content;
+  position: relative;
+  border-bottom: 3px solid #e509149a;
+  overflow: hidden;
+}
+
+.actor:hover {
+  opacity: 0.5;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.actor .details {
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+}
+
+.actor h6 {
+  font-size: 16px;
+  color: gray;
+}
+
+/* .movies {
+      margin-top: 50px!important;
+  } */
+
+/* .actor {
+  text-decoration: none !important;
+  
+  text-overflow: ellipsis;
+  transition: transform 0.4s;
+  background-color: black;
+  outline: #e50914;
+  
+} */
+
+.actor h5 {
+  font-size: 20px;
+  color: #e50914;
+  font-weight: bold;
+}
+
+.actor a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.4s;
+}

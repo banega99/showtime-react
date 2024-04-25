@@ -1,0 +1,9 @@
+.details {
+    margin: 20px auto;
+    padding: 0 12%;
+}
+
+.desc-vid-cont {
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,25 @@
+.actors {
+  margin-top: 90px;
+  padding: 0 11%;
+  margin: 10px 0 100px 0;
+}
+
+.actors img {
+  width: 100px;
+}
+
+.actors h2 {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.gray {
+  color: #808080;
+}

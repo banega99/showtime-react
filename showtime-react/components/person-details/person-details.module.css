@@ -1,0 +1,8 @@
+.cont {
+  margin: 20px auto;
+  padding: 0 12%;
+}
+
+.details {
+  display: flex;
+}

@@ -1,0 +1,25 @@
+.search-dropdown {
+  visibility: hidden;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: fit-content;
+  background-color: #000000;
+  transition: all 0.3s;
+  padding: 10px;
+  padding-bottom: 0;
+  /* transform: translateY(80px); */
+  z-index: 1400;
+}
+
+.search-show {
+  visibility: visible;
+  transform: translateY(80px);
+}
+
+@media (max-width: 992px) {
+  .search-show {
+    visibility: visible;
+    transform: translateY(180px);
+  }
+}

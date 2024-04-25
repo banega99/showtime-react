@@ -1,0 +1,53 @@
+.cast {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 10px !important;
+}
+
+.actor {
+    text-decoration: none;
+    display: flex;
+    margin-bottom: 15px;
+    transition: all .4s;
+}
+
+.actor:hover {
+    cursor: pointer;
+    opacity: 0.6;
+    transform: scale(1.05);
+}
+
+.actor img {
+    width: 100px;
+    height: 150px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.details h6 {
+    color: rgb(49, 58, 73);
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.details h4 {
+    color: white;
+}
+
+.details p {
+    color: #808080;
+    font-size: 15
+}
+
+.gray {
+    font-size: 20px;
+    height: fit-content;
+    /* margin-left: 50px; */
+    margin-right: 5px;
+    color: gray;
+}

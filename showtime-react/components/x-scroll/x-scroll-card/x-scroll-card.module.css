@@ -1,0 +1,102 @@
+.scroll-card {
+  width: 200px !important;
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.scroll-card > a {
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+}
+
+.scroll-card img {
+  width: 100%;
+  height: 100%;
+}
+
+.scroll-card .overlay {
+  margin: 0px auto;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s;
+  /* padding: 10px; */
+  overflow: hidden;
+}
+
+.details {
+  position: absolute;
+  top: 50%;
+  /* left: 50%; */
+  padding: 0 15px;
+  transform: translateY(-50%);
+}
+
+.scroll-card:hover {
+  transform: scale(1.07);
+  cursor: pointer;
+}
+
+.scroll-card:hover img {
+  filter: blur(2px);
+}
+
+.scroll-card:hover .overlay {
+  opacity: 1;
+}
+
+.title {
+  margin: 0 0 5px 0;
+  color: #e50914;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.genres a {
+  margin: 0 0 5px 0;
+  color: rgb(49, 58, 73);
+  text-decoration: none;
+  display: inline-block;
+  /* border: 1px solid gray; */
+  border-radius: 10rem;
+  padding: 2px 6px;
+  margin-right: 5px;
+  font-size: 12px;
+  background-color: rgb(146, 144, 144);
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.genres a:hover {
+  transform: scale(1.06);
+  color: rgb(49, 58, 73);
+  background-color: #e50914;
+  cursor: pointer;
+}
+
+.overview {
+  color: white;
+  font-size: 0.8rem;
+  width: 80%;
+  transition: all 0.3s;
+}

@@ -1,0 +1,60 @@
+.photo {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  justify-self: center;
+  align-self: center;
+  color: black;
+  text-shadow: 0 0 10px white;
+  margin-bottom: 20px;
+}
+
+.img-cover {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  /* z-index: 1200; */
+  background: rgb(229, 9, 20);
+  background: linear-gradient(
+    0deg,
+    rgba(229, 9, 20, 0.7553396358543417) 0%,
+    rgba(251, 251, 251, 0) 90%
+  );
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  align-items: center;
+}
+
+.photo:hover {
+  cursor: pointer;
+}
+
+.photo:hover .img-cover {
+  height: 100%;
+}
+
+.blur {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(15px);
+  transition: all 0.3s;
+}
+
+.blur.show {
+  opacity: 1;
+  visibility: visible;
+  scroll-snap-stop: always;
+  overflow: hidden;
+  /* z-index: 2000; */
+}

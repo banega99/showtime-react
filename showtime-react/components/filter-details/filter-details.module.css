@@ -1,0 +1,7 @@
+.details {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10%;
+  margin-bottom: 50px;
+  gap: 5px;
+}
