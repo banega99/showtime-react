@@ -5,10 +5,12 @@ import XScroll from "../../components/x-scroll/XScroll";
 import XScrollContainer from "../../components/x-scroll/x-scroll-container/XScrollContainer";
 
 export default function Home() {
-  return <>
-    <MainCarousel/>
-    <main className={classes.main}>
-      <XScrollContainer/>
-    </main>
-  </>;
+  return (
+    <>
+      <MainCarousel />
+      <main className={classes.main}>
+        <XScrollContainer />
+      </main>
+    </>
+  );
 }

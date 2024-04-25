@@ -46,3 +46,13 @@
   cursor: pointer;
   color: gray;
 }
+
+@media (max-width: 768px) {
+  .sort-cont h5 {
+    font-size: 10px;
+  }
+
+  .sort-cont select {
+    font-size: 8px;
+  }
+}

@@ -49,10 +49,12 @@
 .scroll-card:hover {
   transform: scale(1.07);
   cursor: pointer;
+  z-index: 1800;
 }
 
 .scroll-card:hover img {
   filter: blur(2px);
+  z-index: 1800;
 }
 
 .scroll-card:hover .overlay {
@@ -99,4 +101,18 @@
   font-size: 0.8rem;
   width: 80%;
   transition: all 0.3s;
+}
+
+@media (min-width: 992px) {
+  .scroll-card {
+    width: 300px !important;
+    height: 450px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .scroll-card {
+    width: 100px !important;
+    height: 150px !important;
+  }
 }

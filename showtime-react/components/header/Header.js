@@ -9,6 +9,7 @@ import DropdownMenu from "../dropdown-menu/DropdownMenu";
 import { getGenres } from "../../lib/movies";
 
 import watchlistLogo from "../../assets/images/watchRed.png";
+import BurgerButton from "../burger-button/BurgerButton";
 
 export default function Header() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -16,6 +17,7 @@ export default function Header() {
   const [type, setType] = useState("All");
   const [show, setShow] = useState(false);
   const [lineWidth, setLineWidth] = useState(0);
+  const [showNav, setShowNav] = useState(false);
   const line = useRef();
   const docRef = useRef(document);
 
@@ -45,7 +47,15 @@ export default function Header() {
         <div className={classes[`logo`]}>
           <Link href="/">SHOWTIME</Link>
         </div>
-        <nav className={classes.nav}>
+        <nav
+          className={
+            showNav ? classes.nav + " " + classes.showNav : classes.nav
+          }
+        >
+          {/* <div className={classes[`nav-item`]}>
+            
+          </div> */}
+
           <div className={classes[`nav-item`] + " " + classes.watchlist}>
             <Link href="/watchlist">
               Watchlist
@@ -88,6 +98,7 @@ export default function Header() {
           style={{ width: `${lineWidth}%` }}
           className={classes.line}
         ></div>
+        <BurgerButton setShowNav={setShowNav} />
       </header>
       <SearchDropdown
         show={show}

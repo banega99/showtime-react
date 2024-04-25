@@ -124,7 +124,7 @@
 
 .year {
   color: rgb(49, 58, 73);
-  /* color: white; */
+  color: white;
   font-size: 18px;
   margin-left: 5px;
 }
@@ -151,13 +151,14 @@
   .movieCard option {
     text-align: center;
   }
-  .card {
+  .movieCard {
     width: 22rem !important;
+    height: 40rem !important;
   }
 
-  /* .img-cover {
-        height: 390px;
-    } */
+  .img-cover {
+    height: 390px;
+  }
 }
 
 @media (max-width: 992px) {
@@ -186,9 +187,15 @@
   }
 }
 
-@media (min-width: 1198px) {
-  .card {
-    width: 15rem !important;
+@media (max-width: 1198px) {
+  .movieCard {
+    width: 285px;
+    height: 527px;
+  }
+
+  .movieCard img {
+    height: 80% !important;
+    width: 100%;
   }
 
   .img-cover {

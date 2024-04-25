@@ -13,7 +13,7 @@ export default function MovieCard({ movie }) {
   return (
     <div className={classes.movieCard}>
       {!!movie.poster_path ? (
-        <Image
+        <img
           loading="lazy"
           src={imgPath + movie.poster_path}
           className={classes[`card-img-top`]}

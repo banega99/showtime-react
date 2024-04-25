@@ -22,10 +22,10 @@ export default function MovieVideos({ videos }) {
     setShowVideos((prev) => {
       const curr = !prev;
       if (curr) {
-        docRef.current.documentElement.style.overflow = "hidden";
+        docRef.current.body.style.overflowY = "hidden";
         blur.current.addEventListener("click", handleShowVideos);
       } else {
-        docRef.current.documentElement.style.overflow = "auto";
+        docRef.current.body.style.overflowY = "auto";
         blur.current.removeEventListener("click", handleShowVideos);
       }
       return curr;

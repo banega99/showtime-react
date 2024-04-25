@@ -17,10 +17,10 @@ export default function PersonPhoto({
     setShowGallery((prev) => {
       const curr = !prev;
       if (curr) {
-        docRef.current.documentElement.style.overflow = "hidden";
+        docRef.current.body.style.overflowY = "hidden";
         blur.current.addEventListener("click", handleShowGallery);
       } else {
-        docRef.current.documentElement.style.overflow = "auto";
+        docRef.current.body.style.overflowY = "auto";
         blur.current.removeEventListener("click", handleShowGallery);
       }
       return curr;

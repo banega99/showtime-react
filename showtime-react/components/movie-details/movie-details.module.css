@@ -1,9 +1,15 @@
 .details {
-    margin: 20px auto;
-    padding: 0 12%;
+  margin: 20px auto;
+  padding: 0 12%;
 }
 
 .desc-vid-cont {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .desc-vid-cont {
+    flex-direction: column;
+  }
 }

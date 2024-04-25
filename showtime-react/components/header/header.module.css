@@ -2,14 +2,16 @@
   display: flex;
   justify-content: space-between;
   top: 0;
+  left: 0;
   background-color: black;
   z-index: 1600;
-  position: sticky;
-  width: 100%;
-  height: 70px;
+  position: sticky !important;
+  /* width: 100px; */
+  height: 90px;
   padding: 10px;
   align-items: center;
   color: var(--red);
+  /* overflow: hidden; */
 }
 
 .header a {
@@ -17,7 +19,7 @@
   text-decoration: none;
 }
 
-.headr .nav > a::after {
+.header .nav > a::after {
   content: " ";
   display: block;
   width: 10px;
@@ -40,6 +42,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  z-index: 1300 !important;
   /* width: fit-content;
     height: fit-content; */
 }
@@ -75,4 +78,33 @@
   height: 3px;
   background-color: #e50914;
   width: 0;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    /* display: none; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: collapse;
+    transition: all 0.3s;
+  }
+  .nav .nav-item {
+    display: none;
+    height: fit-content;
+  }
+  .showNav {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(90px);
+    align-items: flex-start;
+    visibility: visible;
+    height: fit-content;
+    width: 100%;
+    /* z-index: 5500 !important; */
+  }
+  .showNav .nav-item {
+    display: block;
+  }
 }

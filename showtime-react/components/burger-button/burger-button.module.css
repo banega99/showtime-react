@@ -1,0 +1,55 @@
+.burger {
+  display: flex;
+  flex-direction: column;
+  width: 25px;
+  height: 20px;
+  padding: 4px;
+  border: 0.5px solid red;
+  border-radius: 3px;
+  align-items: center;
+  justify-content: space-around;
+  transition: all;
+  position: relative;
+  margin-right: 30px;
+}
+
+.burgerItem {
+  width: 23px;
+  height: 2px;
+  background-color: red;
+  border-radius: 1px;
+}
+
+.burger:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.burger.open .burgerItem:first-child {
+  animation: burgerClickFirst 0.3s forwards;
+}
+
+.burger.open .burgerItem:last-child {
+  animation: burgerClickLast 0.3s forwards;
+}
+
+.burger.open .burgerItem:nth-child(2) {
+  visibility: hidden;
+}
+
+@keyframes burgerClickFirst {
+  100% {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+}
+@keyframes burgerClickLast {
+  100% {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}

@@ -55,7 +55,7 @@ export default function XScroll({ movies, title }) {
       <Swiper
         modules={[Virtual, Scrollbar, Navigation, Mousewheel]}
         spaceBetween={100}
-        slidesPerView={6}
+        slidesPerView={5}
         navigation
         mousewheel
         scrollbar={{ draggable: true }}

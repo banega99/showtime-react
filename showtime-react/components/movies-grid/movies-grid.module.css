@@ -1,7 +1,7 @@
 .genreGrid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  /* grid-template-rows: 1fr 1fr 1fr 1fr; */
   /* width: 100%; */
   height: fit-content;
   padding: 0 12%;
@@ -26,4 +26,31 @@
   padding: 0 10%;
   display: flex;
   justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 16px;
+  }
+  .genreGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .genreGrid {
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .genreGrid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (min-width: 1199px) and (max-width: 1399px) {
+  .genreGrid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }

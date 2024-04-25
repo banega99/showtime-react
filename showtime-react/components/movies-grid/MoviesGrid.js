@@ -22,9 +22,10 @@ export default function MoviesGrid({
 }) {
   const [movies, setMovies] = useState({});
   const [formatedNumber, setFormatedNumber] = useState(0);
+  console.log(filter);
 
   let href = {
-    pathname: `/${type}`,
+    pathname: `/${type == "filter2" ? "filter" : type}`,
     query: {
       page,
     },
@@ -43,6 +44,10 @@ export default function MoviesGrid({
   switch (type) {
     case "filter":
       href.query = { ...filter, page };
+      break;
+    case "filter2":
+      href.query = { ...filter, page };
+      // title = filter.name;
       break;
     case "genres":
       href.query = {
@@ -71,7 +76,7 @@ export default function MoviesGrid({
     async function getData() {
       let data;
       switch (type) {
-        case "filter":
+        case "filter" || "filter2":
           data = await getFilter(filter, page);
           break;
         case "genres":
@@ -84,6 +89,7 @@ export default function MoviesGrid({
           data = await getDataBySearchTerm("movie", searchTerm, page);
           break;
       }
+      console.log(data);
       setMovies(data);
       setFormatedNumber(
         new Intl.NumberFormat(navigator.language).format(

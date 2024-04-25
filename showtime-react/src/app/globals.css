@@ -1,15 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Ubuntu:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&family=Ubuntu:wght@500&display=swap");
 
 :root {
-  --red:#E50914;
+  --red: #e50914;
   --black: #000000;
   --gray: gray;
 }
 
-*{
-  font-family: 'Ubuntu';
+* {
+  font-family: "Ubuntu";
   margin: 0;
   padding: 0;
+  /* box-sizing: border-box; */
 }
 
 body {
@@ -17,8 +18,14 @@ body {
   overflow-x: hidden;
 }
 
+header {
+  width: 100% !important;
+  /* position: sticky !important; */
+  box-sizing: border-box;
+}
+
 .swiper-pagination-bullet-active {
-  background-color: #E50914 !important;
+  background-color: #e50914 !important;
 }
 
 .swiper-button-prev,
@@ -29,15 +36,15 @@ body {
 
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
-  color: #E50914 !important;
+  color: #e50914 !important;
   opacity: 1 !important;
 }
 
 .swiper-scrollbar {
-  background-color: var(#e509146c)!important;
+  background-color: var(#e509146c) !important;
 }
-.swiper-scrollbar-drag{
-  background-color: var(#e50914f3)!important;
+.swiper-scrollbar-drag {
+  background-color: var(#e50914f3) !important;
 }
 
 h1 {
@@ -56,8 +63,6 @@ html::-webkit-scrollbar-track {
 
 /* Handle */
 html::-webkit-scrollbar-thumb {
-  background: #E50914;
+  background: #e50914;
   /* border-radius: 5px; */
 }
-
-

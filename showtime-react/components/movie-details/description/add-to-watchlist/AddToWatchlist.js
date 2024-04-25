@@ -33,13 +33,15 @@ export default function AddToWatchlist({ movie }) {
   }
   return (
     <div className={classes.watchlist} onClick={handleClick}>
-      <h4>{!show ? "Add To Watchlist" : "Remove from Watchlst"}</h4>
-      <Image
-        src={show ? watchMinus.src : watchPlus.src}
-        alt="watch plus"
-        width="20"
-        height="25"
-      />
+      <h4>
+        {!show ? "Add To Watchlist" : "Remove from Watchlst"}
+        <Image
+          src={show ? watchMinus.src : watchPlus.src}
+          alt="watch plus"
+          width="20"
+          height="25"
+        />
+      </h4>
     </div>
   );
 }

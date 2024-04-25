@@ -23,3 +23,14 @@
 .gray {
   color: #808080;
 }
+
+@media (max-width: 768px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .row {
+    grid-template-columns: 1fr 1fr;
+  }
+}

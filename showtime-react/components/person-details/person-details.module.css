@@ -6,3 +6,9 @@
 .details {
   display: flex;
 }
+
+@media (max-width: 767px) {
+  .details {
+    flex-direction: column;
+  }
+}
