@@ -2,6 +2,7 @@ import { getDataBySearchTerm } from "../../lib/movies";
 import Person from "./person/Person";
 import classes from "./persons.module.css";
 import Pagination from "../pagination/Pagination";
+import NotFound from "../not-found/NotFound";
 
 export default async function Persons({ type, name, searchTerm, page }) {
   const persons = await getDataBySearchTerm("person", searchTerm, page);
@@ -13,6 +14,9 @@ export default async function Persons({ type, name, searchTerm, page }) {
       page,
     },
   };
+
+  if (persons?.results?.length == 0)
+    return <NotFound title="Person not found" />;
 
   return (
     <div className={classes.actors}>

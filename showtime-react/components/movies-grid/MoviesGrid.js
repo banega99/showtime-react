@@ -12,6 +12,7 @@ import classes from "./movies-grid.module.css";
 import MovieCard from "../movie-card/MovieCard";
 import Pagination from "../pagination/Pagination";
 import Sort from "../sort/Sort";
+import NotFound from "../not-found/NotFound";
 export default function MoviesGrid({
   id,
   page,
@@ -99,6 +100,8 @@ export default function MoviesGrid({
     }
     getData();
   }, [id, page, filter, searchTerm]);
+
+  if (movies?.results?.length == 0) return <NotFound title="Movie not found" />;
 
   return (
     <>

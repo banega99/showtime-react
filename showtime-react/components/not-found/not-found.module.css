@@ -1,0 +1,17 @@
+.notFound {
+  margin: 100px auto;
+  text-align: center;
+}
+
+.notFound h3 {
+  color: white;
+}
+
+.notFound a {
+  color: gray;
+  text-decoration: none;
+}
+
+.notFound a:hover {
+  opacity: 0.7;
+}
