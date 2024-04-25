@@ -7,6 +7,7 @@ export default async function FilterDetails({
   years,
   countries,
   languages,
+  sort,
 }) {
   const allGenres = await getGenres();
   const allCountries = await getAllCountries();
@@ -45,6 +46,7 @@ export default async function FilterDetails({
       <FilterItem title="Year of release" items={years} />
       <FilterItem title="Country production" items={countriesNames} />
       <FilterItem title="Language" items={languagesNames} />
+      <FilterItem title="Sorted by" items={sort} />
     </div>
   );
 }

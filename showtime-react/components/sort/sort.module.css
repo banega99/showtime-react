@@ -1,0 +1,48 @@
+.sort-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sort-cont h5 {
+  font-size: 20px;
+}
+
+.sort-cont select {
+  margin-left: 5px;
+  background-color: black;
+  color: white;
+  outline: none;
+  border: none;
+  width: fit-content;
+  height: fit-content;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 18px;
+}
+
+.sort-text {
+  color: gray;
+  height: fit-content;
+  width: fit-content;
+}
+
+.sort-cont select:focus > option:checked {
+  background: #000 !important;
+}
+
+.sort-cont option {
+  color: gray;
+  padding: 2px;
+}
+
+.sort-cont select option:hover {
+  background-color: #e50914 !important;
+  color: gray !important;
+  cursor: pointer !important;
+}
+
+.sort-cont select:hover {
+  cursor: pointer;
+  color: gray;
+}

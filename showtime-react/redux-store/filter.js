@@ -16,7 +16,7 @@ const initialState = {
     years: [],
     countries: [],
     companies: [],
-    sort: [],
+    sort: "popularity.desc",
     languages: [],
     page: 1,
   },
@@ -45,11 +45,7 @@ const filterSlice = createSlice({
       genericSet(state, action, "genres");
     },
     setSort: (state, action) => {
-      if (action.payload.checked) state.filter.sort.push(action.payload);
-      else {
-        let index = copy[`${property}`].indexOf(e.target.value);
-        //     copy[`${property}`].splice(index, 1);
-      }
+      state.filter.sort = action.payload.value;
     },
     setLanguages: (state, action) => {
       genericSet(state, action, "languages");
@@ -67,5 +63,6 @@ export const {
   setCountries,
   setYears,
   setLanguages,
+  setSort,
 } = filterSlice.actions;
 export const filterSliceReducer = filterSlice.reducer;

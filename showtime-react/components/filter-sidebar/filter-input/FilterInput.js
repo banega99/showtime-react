@@ -1,46 +1,42 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import classes from "./filter-input.module.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   setFilterData,
   setGenres,
   setCountries,
   setLanguages,
   setYears,
+  setSort,
 } from "../../../redux-store/filter";
+import sortRename from "../../../shared/sortRename";
 
 export default function FilterInput({
   type,
   name,
   id,
   property,
-  setQuery,
   uncheck,
   setChecked,
 }) {
   const input = useRef();
   const dispatch = useDispatch();
-  const filterData = useSelector((state) => state.filter.filter);
-  const [items, setItem] = useState(filterData);
-  // const [check, setCheck] = useState(false);
+
+  if (property === "sort") name = sortRename(name);
 
   function genericSet() {
     if (property === "genres") return setGenres;
     if (property === "years") return setYears;
     if (property === "languages") return setLanguages;
     if (property === "countries") return setCountries;
+    if (property === "sort") return setSort;
   }
 
   function handleChange(e) {
+    console.log(e.target.value);
     setChecked(true);
-    const set = {
-      payload: {
-        value: e.target.value,
-        checked: e.target.checked,
-      },
-    };
     dispatch(
       genericSet()({ value: e.target.value, checked: e.target.checked })
     );
@@ -56,9 +52,10 @@ export default function FilterInput({
         ref={input}
         type={type}
         id={id}
-        name={name}
+        name={property == "sort" ? "sort" : name}
         value={id}
         onChange={handleChange}
+        // onClick={() => console.log("sort")}
         // checked={check}
       />
       <label htmlFor={id}>{name}</label>

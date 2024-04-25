@@ -35,6 +35,7 @@ export default function FilterPage() {
         years={years}
         countries={countries}
         languages={languages}
+        sort={sort}
       />
       <MoviesGrid page={params.get("page")} type="filter" filter={filterData} />
     </>

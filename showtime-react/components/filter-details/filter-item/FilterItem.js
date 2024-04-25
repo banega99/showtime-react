@@ -5,8 +5,10 @@ import { setFilterData } from "../../../redux-store/filter";
 import classes from "./filter-item.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
+import sortRename from "../../../shared/sortRename";
 
 export default function FilterItem({ title, items }) {
+  if (title === "Sorted by") items = sortRename(items);
   const dispatch = useDispatch();
   const filterData = useSelector((state) => state.filter.filter);
   const [filterItems, setFilterItems] = useState(filterData);
@@ -45,7 +47,9 @@ export default function FilterItem({ title, items }) {
   return (
     <div className={classes.div}>
       <h3>{title}: </h3>
-      {items.length > 0 ? (
+      {title == "Sorted by" && <h3 style={{ color: "gray" }}>{items}</h3>}
+      {(items.length > 0 &&
+        title != "Sorted by" &&
         items.map((item, i) => {
           const name = item.name || item.english_name || item;
           const href = {
@@ -66,10 +70,10 @@ export default function FilterItem({ title, items }) {
               )}
             </div>
           );
-        })
-      ) : (
-        <span className={classes.gray}>/</span>
-      )}
+        })) ||
+        (items.length == 0 && title != "Sorted by" && (
+          <span className={classes.gray}>/</span>
+        ))}
     </div>
   );
 }

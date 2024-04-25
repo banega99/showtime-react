@@ -15,7 +15,7 @@ export default function DropdownMenu({ label, type, children }) {
   }
 
   return (
-    <div className={classes.dropdown}>
+    <div className={type == "sort" ? classes.dropdownSort : classes.dropdown}>
       <a
         className={classes.link}
         onClick={() => {

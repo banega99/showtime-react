@@ -11,6 +11,7 @@ import {
 import classes from "./movies-grid.module.css";
 import MovieCard from "../movie-card/MovieCard";
 import Pagination from "../pagination/Pagination";
+import Sort from "../sort/Sort";
 export default function MoviesGrid({
   id,
   page,
@@ -21,6 +22,7 @@ export default function MoviesGrid({
 }) {
   const [movies, setMovies] = useState({});
   const [formatedNumber, setFormatedNumber] = useState(0);
+
   let href = {
     pathname: `/${type}`,
     query: {
@@ -66,8 +68,6 @@ export default function MoviesGrid({
   }
 
   useEffect(() => {
-    // setGenreId(id);
-
     async function getData() {
       let data;
       switch (type) {
@@ -96,13 +96,17 @@ export default function MoviesGrid({
 
   return (
     <>
-      <h2 className={classes.title}>
-        <span style={{ color: "rgb(49, 58, 73)" }}>{title} </span>
-        Movies{" "}
-        {!!movies.total_results && (
-          <span className={classes.gray}>({formatedNumber})</span>
-        )}
-      </h2>
+      <div className={classes.titleCont}>
+        <h2 className={classes.title}>
+          <span style={{ color: "rgb(49, 58, 73)" }}>{title} </span>
+          Movies{" "}
+          {!!movies.total_results && (
+            <span className={classes.gray}>({formatedNumber})</span>
+          )}
+        </h2>
+        <Sort movies={movies} setMovies={setMovies} />
+      </div>
+
       <div className={classes.genreGrid}>
         {movies.results &&
           movies.results?.map((movie) => (

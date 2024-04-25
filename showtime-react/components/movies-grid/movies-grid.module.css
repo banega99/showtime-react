@@ -14,11 +14,16 @@
 .title {
   font-size: 30px;
   font-weight: 700;
-  margin: 10px auto 20px auto;
-  padding: 0 10%;
   color: white;
 }
 
 .title .gray {
   color: gray;
+}
+
+.titleCont {
+  margin: 10px auto 20px auto;
+  padding: 0 10%;
+  display: flex;
+  justify-content: space-between;
 }

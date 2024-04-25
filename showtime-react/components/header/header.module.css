@@ -17,13 +17,23 @@
   text-decoration: none;
 }
 
+.headr .nav > a::after {
+  content: " ";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-image: url(../../assets/images/watchRed.png);
+  /* transition: width 0.3s ease-in-out; */
+}
+
 .header a:hover {
   cursor: pointer;
   opacity: 0.7;
 }
 
 .logo a {
-  font-size: large;
+  font-size: 20px;
+  font-weight: 1000;
 }
 
 .nav {
@@ -36,4 +46,33 @@
 
 .nav .nav-item {
   margin: 20px;
+}
+
+.watchlist img {
+  width: 18px;
+  height: 20px;
+  margin-left: 2px;
+  position: absolute;
+}
+
+/* .watchlist::after {
+  content: " ";
+  display: inline-block;
+  position: absolute;
+  margin-left: 5px;
+  width: 20px;
+  height: 20px;
+  background-image: url(../../assets/images/watchRed.png);
+  background-position: center;
+  background-size: cover;
+  transition: width 0.3s ease-in-out;
+} */
+
+.line {
+  position: fixed;
+  top: 87px;
+  left: 0;
+  height: 3px;
+  background-color: #e50914;
+  width: 0;
 }

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import MovieRating from "../rating/Rating";
 import WatchlistPopover from "./watchlist/Watchlist";
+import { useEffect } from "react";
 
 export default function MovieCard({ movie }) {
   if (!movie) return;

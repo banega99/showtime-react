@@ -1,6 +1,9 @@
 .input {
-  display: flex;
+  /* display: flex; */
   gap: 5px;
+  flex-wrap: nowrap;
+  width: fit-content;
+  height: fit-content;
 }
 
 .input:hover {

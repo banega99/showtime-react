@@ -6,21 +6,24 @@
 .link {
 }
 
-.dropdown > a {
+.dropdown > a,
+.dropdownSort > a {
   display: flex;
   justify-content: center;
   align-items: center;
   color: #e50914;
 }
 
-.dropdown > a::after {
+.dropdown > a::after,
+.dropdownSort > a::after {
   content: " ";
   width: 25px;
   height: 25px;
   background-image: url("../../assets/images/noun-drop-down-2284624.svg");
 }
 
-.dropdown ul {
+.dropdown ul,
+.dropdownSort ul {
   visibility: collapse;
   position: absolute;
   left: -50px;
@@ -31,7 +34,8 @@
   z-index: 1500;
 }
 
-.dropdown li {
+.dropdown li,
+.dropdownSort li {
   display: none;
   align-items: center;
   visibility: collapse;
@@ -45,7 +49,8 @@
   color: #808080 !important;
 }
 
-.dropdown li:hover {
+.dropdown li:hover,
+.dropdownSort li:hover {
   cursor: pointer;
   background-color: var(--red);
 }
@@ -63,6 +68,20 @@
   padding: 12px;
   /* width: 100%; */
 }
+
+.dropdownSort .show li {
+  display: flex;
+  visibility: visible;
+  height: fit-content;
+  width: 100%;
+  padding: 12px;
+}
+
+.dropdownSort .show {
+  visibility: visible;
+  height: 180px;
+}
+
 .dropdown ul::-webkit-scrollbar {
   width: 1.5px;
 }

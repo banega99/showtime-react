@@ -5,35 +5,31 @@ import classes from "./filter-sidebar.module.css";
 import arrowLeft from "../../assets/images/guideWhite_left.png";
 import arrowRight from "../../assets/images/guideWhite_right.png";
 import DropdownMenu from "../dropdown-menu/DropdownMenu";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { getAllCountries, getAllLanguages, getGenres } from "../../lib/movies";
 import FilterInput from "./filter-input/FilterInput";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { resetFilterData, setFilterData } from "../../redux-store/filter";
-import { usePathname, useSearchParams, useRouter } from "next/navigation";
 
 export default function FilterSidebar() {
   const dispatch = useDispatch();
   const filterData = useSelector((state) => state.filter.filter);
-  const pathname = usePathname();
-  const router = useRouter();
-  console.log(pathname);
-
-  const [query, setQuery] = useState(filterData);
   const [show, setShow] = useState(false);
   const [countries, setCountries] = useState([]);
   const [languages, setLanguages] = useState([]);
   const [genres, setGenres] = useState([]);
-  const [sort, setSort] = useState([]);
+  const sort = [
+    "vote_average.desc",
+    "vote_average.asc",
+    "popularity.desc",
+    "popularity.asc",
+  ];
   const [checked, setChecked] = useState(true);
   let years = [];
   for (let i = new Date().getFullYear(); i >= 1900; i--) {
     years.push(i);
   }
-  const [] = useState([]);
-  const [] = useState([]);
-  const input = useRef();
 
   useEffect(() => {
     async function getData() {
@@ -42,7 +38,6 @@ export default function FilterSidebar() {
       setGenres(await getGenres());
     }
     getData();
-    // console.log(genres);
   }, []);
 
   const href = {
@@ -69,14 +64,10 @@ export default function FilterSidebar() {
     console.log("Resetting");
     setChecked(false);
     dispatch(resetFilterData());
-    // if (pathname == "/filter") router.push("/");
-    // setChecked(true);
-    // console.log(input.current);
   }
 
   function handleClick() {
     dispatch(setFilterData(filterData));
-    console.log(filterData);
   }
 
   return (
@@ -115,7 +106,6 @@ export default function FilterSidebar() {
                   name={genre.name}
                   id={genre.id}
                   type="checkbox"
-                  setQuery={setQuery}
                   uncheck={checked}
                   setChecked={setChecked}
                 />
@@ -132,7 +122,6 @@ export default function FilterSidebar() {
                   name={year}
                   id={year}
                   type="checkbox"
-                  setQuery={setQuery}
                   uncheck={checked}
                   setChecked={setChecked}
                 />
@@ -149,7 +138,6 @@ export default function FilterSidebar() {
                   name={country.english_name}
                   id={country.iso_3166_1}
                   type="checkbox"
-                  setQuery={setQuery}
                   uncheck={checked}
                   setChecked={setChecked}
                 />
@@ -166,14 +154,28 @@ export default function FilterSidebar() {
                   name={language.english_name}
                   id={language.iso_639_1}
                   type="checkbox"
-                  setQuery={setQuery}
                   uncheck={checked}
                   setChecked={setChecked}
                 />
               );
             })}
         </DropdownMenu>
-        <DropdownMenu label="Sort by" />
+        <DropdownMenu type="sort" label="Sort by">
+          {!!sort &&
+            sort.map((sort, i) => {
+              return (
+                <FilterInput
+                  key={i}
+                  property="sort"
+                  name={sort}
+                  id={sort}
+                  type="radio"
+                  uncheck={checked}
+                  setChecked={setChecked}
+                />
+              );
+            })}
+        </DropdownMenu>
         <div>
           <button
             onClick={handleClick}
